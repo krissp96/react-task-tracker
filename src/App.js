@@ -23,7 +23,13 @@ function App() {
   };
   //Toggke reminder
   const toggleReminder = (id) => {
-    console.log(id);
+    setTasks(
+      tasks.map((task) => {
+        console.log({ ...task, day: "gosho" });
+        console.log(id);
+        return task.id === id ? { ...task, reminder: !task.reminder } : task;
+      })
+    );
   };
   // const name = 'Brad'
   // const x = false
